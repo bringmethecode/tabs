@@ -1,3 +1,4 @@
+const config = require('./config/config')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
@@ -8,10 +9,6 @@ app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.post('/register', (req, res) => {
-  res.send({
-    message: `${req.body.email}, you have been registered!`
-  })
-})
+require('./routes')(app)
 
-app.listen(process.env.PORT || 8081)
+app.listen(config.port)

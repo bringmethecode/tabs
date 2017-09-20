@@ -25,8 +25,9 @@
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
+
 export default {
-  name: 'Register',
+  name: 'Users',
   data () {
     return {
       email: '',
